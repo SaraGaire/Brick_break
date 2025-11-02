@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Deutsch Lernen – Word Breaker</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>🇩🇪 Deutsch Lernen – Word Breaker</h1>
+  <div class="badge">🎯 Einfache Vokabeln • 💡 Sanfte Hilfen • ✨ Coole Effekte</div>
+
+  <div id="hud">
+    <div class="chip">Level: <b id="level">1</b></div>
+    <div class="chip">Score: <b id="score">0</b></div>
+    <div class="chip">Leben: <b id="lives">3</b></div>
+    <div class="chip">Streak: <b id="streak">0</b></div>
+    <div class="chip"><label><input type="checkbox" id="soundToggle"> 🔊 Sound</label></div>
+    <div class="chip"><button id="syncBtn">⏫ Sync</button></div>
+  </div>
+
+  <div class="shell">
+    <canvas id="game" width="920" height="540"></canvas>
+
+    <!-- Overlay screens -->
+    <div id="overlay">
+      <div class="overlay-card" id="overlayCard">
+        <h2 id="ovTitle">Los geht's! 🎉</h2>
+        <p id="ovText">Bewege den Schläger mit ⬅️ ➡️ oder A/D. Drücke <b>Leertaste</b> zum Start.</p>
+        <div class="btns">
+          <button id="startBtn">Start</button>
+          <button id="howBtn">Hilfe</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quiz Modal -->
+    <div class="quizBox" id="quiz">
+      <div class="card">
+        <h3>Was bedeutet <span id="qWord"></span>?</h3>
+        <div id="options"></div>
+      </div>
+    </div>
+
+    <!-- Reward Modal -->
+    <div class="rewardBox" id="reward">
+      <div class="card"><h2>🎉 Sticker erhalten! 🎉</h2><p>Bleib dran!</p></div>
+    </div>
+
+    <!-- Summary Modal -->
+    <div class="summaryBox" id="summary">
+      <div class="card">
+        <h2>📊 Dein Fortschritt</h2>
+        <p id="statText"></p>
+        <button id="summaryClose">Weiter</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile touch controls -->
+  <div id="touch">
+    <button id="leftBtn">⬅️</button>
+    <button id="pauseBtn">⏸️</button>
+    <button id="rightBtn">➡️</button>
+  </div>
+
+  <div id="panel">
+    <h3>📚 Gelernte Wörter</h3>
+    <div class="sections">
+      <div class="section" data-color="red"><div class="head red">🔴 Rot</div><div class="words" id="redList"></div></div>
+      <div class="section" data-color="orange"><div class="head orange">🟠 Orange</div><div class="words" id="orangeList"></div></div>
+      <div class="section" data-color="yellow"><div class="head yellow">🟡 Gelb</div><div class="words" id="yellowList"></div></div>
+      <div class="section" data-color="green"><div class="head green">🟢 Grün</div><div class="words" id="greenList"></div></div>
+      <div class="section" data-color="blue"><div class="head blue">🔵 Blau</div><div class="words" id="blueList"></div></div>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
